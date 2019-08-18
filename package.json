@@ -4,10 +4,16 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "copy-fonts": "cpy node_modules/framework7-icons/fonts/*.* src/fonts && cpy node_modules/material-design-icons/iconfont/*.{eot,ttf,woff,woff2} src/fonts",
+    "postinstall": "npm run copy-fonts"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "framework7": "^3.4.3",
+    "framework7-icons": "^0.9.1",
+    "framework7-vue": "^3.4.3",
+    "material-design-icons": "^3.0.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
@@ -15,8 +21,11 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
     "@vue/cli-service": "^3.10.0",
+    "cpy-cli": "^2.0.0",
+    "css-loader": "^1.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "vue-cli-plugin-framework7": "^0.1.0",
     "vue-template-compiler": "^2.6.10"
   }
 }
